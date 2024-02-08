@@ -1,0 +1,112 @@
+<header>
+  <h1>Midterm Lab Activity 1: Angular Pipes</h1>
+</header>
+
+<div class="container">
+  <!-- Date Formatting Cards -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Formatted Dates</h2>
+    </div>
+    <div class="card-body">
+      <p>Today's date: {{presentDate}}</p>
+      <p>Date: {{presentDate | date: 'shortDate'}}</p>
+      <p>Date: {{presentDate | date: 'mediumDate'}}</p>
+      <p>Date: {{presentDate | date: 'longDate'}}</p>
+    </div>
+  </div>
+
+  <!-- Data with Parameters Card -->
+  <div class="card">
+    <div class="card-header" style="background-color: #007bff;">
+      <h2>Data with Parameters</h2>
+    </div>
+    <div class="card-body">
+      <p>Formatted Date: {{presentDate | date: 'M/dd/yyyy'}}</p>
+      <p>Hours and Minutes: {{presentDate | date: 'h:mm'}}</p>
+    </div>
+  </div>
+
+  <!-- Chained Pipe Demo Card -->
+  <div class="card">
+    <div class="card-header" style="background-color: #ff5722;">
+      <h2>Chained Pipe Demo</h2>
+    </div>
+    <div class="card-body">
+      <p>Date with uppercase text: {{presentDate | date: 'fullDate' | uppercase}}</p>
+      <p>Date with lowercase: {{presentDate | date: 'medium' | lowercase}}</p>
+    </div>
+  </div>
+
+  <!-- Asynchronous Demo Card -->
+  <div class="card">
+    <div class="card-header" style="background-color: #9c27b0;">
+      <h2>Asynchronous Demo</h2>
+    </div>
+    <div class="card-body">
+      <p>Seconds changing in Time: {{ time$ | async | date:'mediumTime' }}</p>
+    </div>
+  </div>
+
+  <!-- Currency Pipes Card -->
+  <div class="card">
+    <div class="card-header" style="background-color: #2b33ac;">
+      <h2>Currency Pipes</h2>
+    </div>
+    <div class="card-body">
+      <p>{{price | currency:'':true}}</p>
+      <p>{{price | currency:'INR' }}</p>
+      <p>{{price | currency:'CAD' : 'code' }}</p>
+    </div>
+  </div>
+
+  <!-- Decimal Pipes Card -->
+  <div class="card">
+    <div class="card-header" style="background-color: #9198f8;">
+      <h2>Decimal Pipes</h2>
+    </div>
+    <div class="card-body">
+      <p>{{decimalNum1 | number}}</p>
+      <p>{{decimalNum2 | number}}</p>
+      <p>Apply Formatting:- {{decimalNum1 | number: '3.1'}}</p>
+      <p>Apply Formatting:- {{decimalNum2 | number: '2.1-4'}}</p>
+    </div>
+  </div>
+
+  <!-- Slice Pipes Card -->
+  <div class="card">
+    <div class="card-header" style="background-color: #f86e98;">
+      <h2>Slice Pipes</h2>
+    </div>
+    <div class="card-body">
+      <p>Start index:- {{Fruits | slice:2}}</p>
+      <p>Start and end index:- {{Fruits | slice:1:4}}</p>
+      <p>Negative index:- {{Fruits | slice:-2}}</p>
+      <p>Negative start and end index:- {{Fruits | slice:-4:-2}}</p>
+    </div>
+  </div>
+
+  <!-- Percent Pipes Card -->
+  <div class="card">
+    <div class="card-header" style="background-color: #668065;">
+      <h2>Percent Pipes</h2>
+    </div>
+    <div class="card-body">
+      <p>{{percentNum1 | percent}}</p>
+      <p>{{percentNum2 | percent}}</p>
+      <p>Apply Formatting:- {{percentNum1 | number: '3.1'}}</p>
+      <p>Apply Formatting:- {{percentNum2 | number: '2.1-4'}}</p>
+    </div>
+  </div>
+
+  <!-- JSON Pipes Card -->
+  <div class="card">
+    <div class="card-header" style="background-color: #0f90cc;">
+      <h2>JSON Pipes</h2>
+    </div>
+    <div class="card-body">
+      <p>Without JSON pipe:- {{object}}</p>
+      <p>With JSON pipe:- {{object | json}}</p>
+    </div>
+  </div>
+</div>
